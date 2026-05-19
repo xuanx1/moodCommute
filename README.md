@@ -1,6 +1,6 @@
 # Mood Commute · 気分通勤
 
-Urban emotion mapping for Tokyo + Osaka commutes — cyberpunk-CRT + 80s VHS-neon. Real OSM geometry, real published JR schedules, real Japanese tweets binned by hour-of-day. Two side-by-side loop maps + a drill-down rail show where stress, joy, fatigue, and six other emotions concentrate along the Yamanote and Osaka Loop lines, minute by minute.
+[Urban emotion mapping](https://xuanx1.github.io/moodCommute/) for Tokyo + Osaka commutes — cyberpunk-CRT + 80s VHS-neon. Real OSM geometry, real published JR schedules, real Japanese tweets binned by hour-of-day. Two side-by-side loop maps + a drill-down rail show where stress, joy, fatigue, and six other emotions concentrate along the Yamanote and Osaka Loop lines, minute by minute.
 
 > Live JST clock, real coast + rivers, ~92 real subway/metro lines, 47 real ward polygons, ~40+ trains gliding along the real track at published timetable speed. Hover any station for a neon emotion tooltip; click to inspect.
 
