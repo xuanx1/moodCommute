@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mood Commute · 気分通勤</title>
+
+  <!-- Cyberpunk CRT + 80s Japanese VHS neon. Fonts vendored locally
+       (vendor/fonts/*.woff2). Japanese kana/kanji use system fallbacks
+       (Hiragino Mincho, Yu Mincho, etc.) — see README. -->
+  <link rel="stylesheet" href="vendor/fonts.css">
+
+  <link rel="stylesheet" href="tokens.css" />
+
+  <style>
+    /* tweak-toggleable CRT */
+    html.no-scan .crt-scanlines::after { display: none; }
+    html.vhs-tint body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,.45) 100%),
+        linear-gradient(180deg, rgba(255,44,212,.04), rgba(0,234,255,.04));
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: screen;
+    }
+    html.vhs-tint body::after {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      background-image:
+        repeating-linear-gradient(0deg,
+          rgba(255,255,255,.02) 0px, rgba(255,255,255,.02) 1px,
+          transparent 1px, transparent 3px);
+      mix-blend-mode: overlay;
+    }
+
+    #root { display: contents; }
+
+    /* dotgothic for kana sometimes -- ensure it actually loads */
+    html { font-display: swap; }
+  </style>
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <rect width="100" height="100" fill="#07050d"/>
+      <circle cx="50" cy="50" r="22" fill="none" stroke="#ff2cd4" stroke-width="3"/>
+      <circle cx="50" cy="50" r="32" fill="none" stroke="#00eaff" stroke-width="2" opacity="0.6"/>
+      <text x="50" y="58" text-anchor="middle" font-family="serif" font-size="28" fill="#ff2cd4" font-weight="700">気</text>
+    </svg>
+  </template>
+
+  <script src="vendor/react.min.js"></script>
+  <script src="vendor/react-dom.min.js"></script>
+  <script src="vendor/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- data (regular script, runs first) -->
+  <script src="data.js"></script>
+  <script src="trains.js"></script>
+
+  <!-- shared helpers (defines TweakCtx, IsoCityMap, BiTitle, etc) -->
+  <script type="text/babel" src="shared.jsx"></script>
+
+  <!-- viz components -->
+  <script type="text/babel" src="viz/city-panel.jsx"></script>
+  <script type="text/babel" src="viz/rail-panel.jsx"></script>
+  <script type="text/babel" src="viz/scrubber.jsx"></script>
+
+  <!-- main app -->
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
